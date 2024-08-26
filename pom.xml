@@ -9,11 +9,19 @@
     <packaging>war</packaging>
 
     <dependencies>
-        <!-- Add dependencies here -->
+        <!-- Servlet API dependency -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>4.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+        
+        <!-- Additional dependencies (e.g., JSTL) -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-jsp-api</artifactId>
+            <version>2.3.3</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -33,6 +41,18 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.3.1</version>
+            </plugin>
+            
+            <!-- Tomcat Maven Plugin (Optional) -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <url>http://localhost:8080/manager/text</url>
+                    <server>tomcatServer</server>
+                    <path>/my-web-app</path>
+                </configuration>
             </plugin>
         </plugins>
     </build>
