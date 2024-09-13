@@ -75,7 +75,6 @@
           <path>/webappballi</path>
         </configuration>
       </plugin>
-      <!-- Site plugin -->
       <plugin>
         <artifactId>maven-site-plugin</artifactId>
         <version>3.7.1</version>
